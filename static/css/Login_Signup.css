@@ -1,0 +1,108 @@
+
+body{
+  /* background-color:#FAF9F6; */
+  background-color: #f8f8ff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.signup-box {
+  width: 380px;
+  height: 780px;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.login-box {
+  width: 360px;
+  height: 330px;
+  margin: auto;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.2);
+  display: block;
+
+}
+
+h1 {
+  text-align: center;
+  padding-top: 12px;
+}
+
+h4 {
+  text-align: center;
+}
+
+form {
+  width: 300px;
+  margin-left: 15px;
+}
+
+form label {
+  display: flex;
+  margin-top: 15px;
+  font-size: 18px;
+}
+form select {
+  width: calc(100% - 22px); /* Adjusted width to match other inputs */
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 6px;
+  outline: none;
+  margin-top: 10px;
+}
+form input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border: 1px solid black;
+  border-radius: 6px;
+  outline: none;
+}
+/* Style form labels and select elements */
+
+input[type="submit"] {
+ 
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 10px;
+  max-width: 150px;
+  display: block;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10px auto 0;
+  transition: background-color 0.3s;
+  font-size: 18px;
+}
+
+input[type="submit"]:hover {
+  background-color: #228b22;
+}
+
+input[type="button"] {
+  width: 320px;
+  height: 35px;
+  margin-top: 20px;
+  border: none;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+}
+
+p {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 15px;
+}
+
+.para-2 {
+  text-align: center;
+  color: black;
+  font-size: 15px;
+  margin-top: -10px;
+}
+
+.para-2 a {
+  color: #4CAF50;
+}

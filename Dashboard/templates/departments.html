@@ -1,0 +1,20 @@
+<section class="departments card bg-white mx-4 my-2 w-55 p-3">
+    <div class="d-flex justify-content-between align-items-center">
+        <h4 class="my-0">Departments</h4>
+    </div>
+    <div class="row g-2 mx-1 my-1">
+        {% for department_id, department_name in departments.items %}
+            {% if forloop.counter0|divisibleby:3 %}
+                </div><div class="row g-2 mx-2 my-1">
+            {% endif %}
+            <div class="col-sm-4">
+                <div class="card border-primary">
+                    <div class="card-body">
+                        <h5 class="card-title mx-2">{{ department_name }}</h5>
+                        <a href="{% url 'department_complaints' department_id %}" class="btn btn-info btn-sm p-2 m-1">View Complaints</a> 
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>

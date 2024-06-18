@@ -1,0 +1,70 @@
+<section class="my-complaints card bg-white mx-4 w-55 p-3 shadow-md">
+    <div class="d-flex justify-content-between align-items-center">
+      <h4 class="my-0">My Complaints</h4>
+      <a href="{% url 'new_complaint' %}" class="btn btn-primary btn p-2 m-1"> Lodge a new complaint</a>
+    </div>
+    <div class="row g-3 mx-2 my-1">
+      <div class="col-sm-4 ">
+        <input class="form-control p-2 me-1 border-primary" id="myInput" type="text" placeholder="Search complaints">
+      </div>
+      </div>
+  <div class="container-fluid p-1 bg-white mx-1 my-1 ">
+    {% for message in messages %}
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  {% endfor %}
+    <div class="row">
+      <div class="col">
+        <div style="max-height: 500px; overflow-y: auto;">
+          <table id="dtBasicExample" class="table table-striped table-default">
+            <thead class="table-primary">
+              <tr>
+                <th scope="col">Complaint ID</th>
+                <th scope="col">Created on</th>
+                <th scope="col">Assigned to</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+      
+              </tr>
+            </thead>
+            <tbody id="myTable">
+              {% for complaint in complaints %}
+              <tr>
+                <td>{{complaint.id}}</td>
+                <td>{{complaint.created_at}}</td>
+                <td>{{complaint.department}}</td>
+                <td>{{complaint.status}}</td>
+                <td>
+                  <a href="#" class="btn btn-primary btn-sm p-2 m-1" data-bs-toggle="modal" data-bs-target="#complaintModal" onclick="showComplaintDetails('{{ complaint.id }}', '{{ complaint.created_at }}', '{{ complaint.department }}', '{{ complaint.status }}','{{complaint.complaint}}','{{complaint.user.email}}')">View Details</a>
+                </td>
+              </tr>
+              {% endfor %} 
+            </tbody>
+      </table>    
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+<div class="modal fade" id="complaintModal" tabindex="-1" aria-labelledby="complaintModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="complaintModalLabel">Complaint Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Complaint details will be populated here -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
